@@ -260,3 +260,56 @@ h1, h2, h3, h4 {
 .chip.ativo { background: var(--tinta); color: var(--creme-claro); font-weight: 700; }
 .chip-quadrado { border-radius: var(--raio-sm); }
 .chip-quadrado.ativo { background: var(--vinho); border-color: var(--vinho); }
+
+.card-noticia { display: flex; flex-direction: column; border: var(--borda); border-radius: var(--raio); overflow: hidden; background: var(--creme-claro); text-decoration: none; transition: transform 0.12s, box-shadow 0.12s; }
+.card-noticia:hover { transform: translateY(-2px); box-shadow: 0 4px 0 var(--tinta); }
+.card-noticia .imagem-noticia { height: 150px; border-bottom: var(--borda); }
+.card-noticia-corpo { padding: 14px 14px 18px; }
+.card-noticia-meta { display: flex; justify-content: space-between; font-size: 0.7rem; color: var(--tinta-suave); margin-bottom: 6px; }
+.card-noticia h3 { font-family: var(--fonte-texto); font-size: 1rem; margin-bottom: 6px; }
+.card-noticia p { font-size: 0.82rem; margin: 0; color: var(--tinta-suave); }
+
+.paginacao { display: flex; justify-content: center; gap: 8px; margin-top: 30px; }
+.paginacao button { min-width: 36px; height: 36px; border: var(--borda); border-radius: var(--raio-sm); background: var(--creme-claro); font-weight: 700; font-size: 0.85rem; padding: 0 12px; }
+.paginacao button.ativo { background: var(--vinho); border-color: var(--vinho); color: var(--creme-claro); }
+
+.vazio { text-align: center; padding: 48px 16px; border: 1.5px dashed var(--terracota); border-radius: var(--raio); background: var(--creme-claro); }
+
+.migalhas { font-size: 0.78rem; margin-bottom: 14px; }
+.migalhas a { color: var(--vinho); }
+.artigo-titulo { font-size: clamp(1.9rem, 4.5vw, 2.8rem); margin: 14px 0 16px; }
+.artigo-meta { display: flex; flex-wrap: wrap; gap: 18px; font-size: 0.78rem; color: var(--tinta-suave); border-block: 1px solid rgba(42, 22, 18, 0.12); padding: 10px 0; margin-top: 18px; }
+.artigo-imagem { height: clamp(220px, 40vw, 400px); border: var(--borda); border-radius: var(--raio); margin: 36px 0 6px; }
+.artigo-corpo { font-size: 1rem; }
+.artigo-corpo p { margin: 0 0 18px; }
+.artigo-corpo h2 { color: var(--vinho); font-size: 1.35rem; margin: 30px 0 14px; }
+.artigo-corpo .para-lembrar { background: var(--salvia); border: var(--borda); border-radius: var(--raio); padding: 18px 22px; margin: 24px 0; }
+.artigo-corpo .para-lembrar ul { margin: 8px 0 0; padding-left: 18px; font-size: 0.9rem; }
+
+/* ---------- Carreiras ---------- */
+.numero-romano {
+  width: 38px; height: 38px; border-radius: 50%; border: var(--borda);
+  display: grid; place-items: center; font-family: var(--fonte-titulo); font-weight: 700; font-size: 0.9rem;
+}
+.carreira h3 { font-family: var(--fonte-texto); font-size: 1.1rem; margin: 14px 0 8px; }
+.carreira p { font-size: 0.86rem; margin: 0; }
+.onde-atua { border-top: 1px solid rgba(42, 22, 18, 0.15); margin-top: 14px; padding-top: 10px; font-size: 0.8rem; }
+.onde-atua strong { display: block; font-size: 0.66rem; letter-spacing: 0.1em; color: var(--terracota); }
+.curso-card { border-radius: var(--raio); padding: 18px; color: var(--tinta); }
+.curso-card small { font-size: 0.66rem; font-weight: 700; letter-spacing: 0.1em; }
+.curso-card h3 { font-family: var(--fonte-texto); font-size: 1.1rem; margin: 4px 0 8px; }
+.curso-card p { font-size: 0.82rem; margin: 0; }
+
+.caixa-formacao { max-width: 340px; }
+.caixa-formacao strong { font-size: 0.66rem; letter-spacing: 0.1em; color: var(--vinho); display: block; margin-bottom: 4px; }
+
+.dica-coluna { border: var(--borda); border-radius: var(--raio); overflow: hidden; background: var(--creme-claro); }
+.dica-coluna > h2 { font-size: 1.1rem; padding: 18px 16px; border-bottom: var(--borda); }
+.dica-lista { list-style: none; margin: 0; padding: 10px 16px 16px; }
+.dica-lista li { display: grid; grid-template-columns: 26px 1fr; gap: 10px; padding: 12px 0; border-bottom: 1px solid rgba(42, 22, 18, 0.12); }
+.dica-lista li:last-child { border-bottom: 0; }
+.dica-lista .bolinha { width: 22px; height: 22px; border-radius: 50%; background: var(--tinta); color: var(--creme-claro); font-size: 0.72rem; font-weight: 700; display: grid; place-items: center; margin-top: 2px; }
+.dica-lista h3 { font-family: var(--fonte-texto); font-size: 0.92rem; margin-bottom: 2px; }
+.dica-lista p { font-size: 0.8rem; margin: 0; color: var(--tinta-suave); }
+.temas { display: flex; flex-wrap: wrap; gap: 8px; margin: 22px 0 28px; }
+.temas span { background: var(--creme-claro); color: var(--tinta); border-radius: 999px; padding: 6px 14px; font-size: 0.8rem; font-weight: 500; }
