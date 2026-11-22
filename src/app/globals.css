@@ -1,9 +1,43 @@
-* {
-    box-sizing: border-box;
+:root {
+  --vinho: #9a0a2e;
+  --vinho-escuro: #7a0624;
+  --ouro: #e8a93a;
+  --ouro-claro: #f5d48f;
+  --creme: #fdf0cf;
+  --creme-claro: #fef7e4;
+  --areia: #f3e2b5;
+  --salvia: #b7cbb8;
+  --turquesa: #7cc3ca;
+  --terracota: #a35a3f;
+  --rosa: #d99c86;
+  --tinta: #2a1612;
+  --tinta-suave: #5b4a42;
+
+  --fonte-titulo: var(--font-cinzel), "Cinzel", Georgia, serif;
+  --fonte-texto: var(--font-dm-sans), "DM Sans", system-ui, sans-serif;
+
+  --borda: 1.5px solid var(--tinta);
+  --raio: 10px;
+  --raio-sm: 6px;
+  --largura: 1180px;
+  --sombra: 0 2px 0 rgba(42, 22, 18, 0.9);
+
+  --faixa-grega: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Crect width='20' height='20' fill='%23f7dca8'/%3E%3Cpath d='M2 18V2h16v12H6V6h8v4h-4' fill='none' stroke='%239a0a2e' stroke-width='2'/%3E%3C/svg%3E");
+  --faixa-onda: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='16' viewBox='0 0 40 16'%3E%3Crect width='40' height='16' fill='%23e8a93a'/%3E%3Cpath d='M0 13h8q6 0 8-6t7-4q4 2 1 6t-5 0' fill='none' stroke='%232a1612' stroke-width='2' stroke-linecap='round'/%3E%3Cpath d='M24 13h16' stroke='%232a1612' stroke-width='2'/%3E%3C/svg%3E");
+  --faixa-palmeta: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='18' viewBox='0 0 28 18'%3E%3Crect width='28' height='18' fill='%23e8a93a'/%3E%3Cg stroke='%232a1612' stroke-width='1.8' stroke-linecap='round'%3E%3Cpath d='M14 15 7 5M14 15l-3-12M14 15V2M14 15l3-12M14 15l7-10'/%3E%3Cpath d='M3 16h22'/%3E%3C/g%3E%3Ccircle cx='14' cy='15' r='2' fill='%239a0a2e'/%3E%3C/svg%3E");
+  --faixa-lotus: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='18' viewBox='0 0 28 18'%3E%3Crect width='28' height='18' fill='%23fdf0cf'/%3E%3Cg fill='none' stroke='%239a0a2e' stroke-width='1.6' stroke-linecap='round'%3E%3Cpath d='M14 16C10 12 9 7 14 2c5 5 4 10 0 14ZM14 16c-4-1-8-4-9-9 4 0 7 3 9 9ZM14 16c4-1 8-4 9-9-4 0-7 3-9 9Z'/%3E%3C/g%3E%3C/svg%3E");
 }
 
-html,
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
 body {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  background: var(--creme);
+  color: var(--tinta);
+  font-family: var(--fonte-texto);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
 }
