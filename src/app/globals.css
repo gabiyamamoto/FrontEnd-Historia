@@ -41,3 +41,40 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
+
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+button { font: inherit; cursor: pointer; }
+input, select, textarea { font: inherit; color: inherit; }
+
+h1, h2, h3, h4 {
+  font-family: var(--fonte-titulo);
+  font-weight: 700;
+  line-height: 1.15;
+  margin: 0;
+}
+
+:focus-visible { outline: 3px solid var(--ouro); outline-offset: 2px; }
+
+.container { width: min(100% - 32px, var(--largura)); margin-inline: auto; }
+.container-estreito { width: min(100% - 32px, 760px); margin-inline: auto; }
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+}
+
+.sobretitulo {
+  font-family: var(--fonte-texto);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--terracota);
+  margin: 0 0 10px;
+}
+.titulo-pagina { font-size: clamp(2.2rem, 5vw, 3.4rem); color: var(--vinho); }
+.titulo-secao { font-size: clamp(1.5rem, 3vw, 2rem); color: var(--vinho); }
+.lead { font-size: 1.05rem; max-width: 560px; margin: 14px 0 0; }
+.texto-suave { color: var(--tinta-suave); }
+.claro { color: var(--creme); }
