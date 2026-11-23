@@ -1,6 +1,6 @@
-import { requisicao, comExemplo } from "./api";
-import { integrantes } from "@/lib/dadosExemplo";
+import { requisicao } from "./api";
 
-export const listarIntegrantes = () => comExemplo(() => requisicao("/integrantes"), integrantes);
+export const listarIntegrantes = async () => (await requisicao("/integrantes")) ?? [];
 
-export const atualizarIntegrante = (id, dados, token) => requisicao(`integrantes/${id}`, {metodo: "PUT", corpo: dados, token });
+export const atualizarIntegrante = (id, dados, token) =>
+  requisicao(`/integrantes/${id}`, { metodo: "PUT", corpo: dados, token });
