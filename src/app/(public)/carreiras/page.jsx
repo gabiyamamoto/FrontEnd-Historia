@@ -78,7 +78,7 @@ export default async function PaginasCarreiras() {
             <section className="bg-tinta">
                 <div className="container secao">
                     <p className="sobretitulo" style={{ color: "var(--ouro)" }}>
-                        História + SENAI Valinhos
+                        História + Senai Valinhos
                     </p>
                     <h2 className="titulo-secao claro" style={{ color: "var(--ouro)" }}>
                         Como a História entra nos cursos técnicos
