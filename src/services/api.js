@@ -37,7 +37,42 @@ export async function requisicao(rota, { metodo = "GET", corpo, token, params, t
     let resposta;
 
     try {
+        resposta = await fetch(url, {
+            method: metodo,
+            headers,
+            body: corpo !== undefined ? JSON.stringify(corpo) : undefined,
+            cache: "no-store",
+            signal: AbortSignal.timeout(timeout),
+        });
+    } catch (erro) {
+        throw new ApiError("Não foi possível conectar à API.", 0);
+    }
         
+    if (resposta.status === 204) {
+        return null;
     }
 
-)
+    const json = await resposta.json().catch(() => null);
+
+    if (!resposta.ok || json?.sucesso === false) {
+        throw new ApiError(
+            json?.mensagem || MENSAGEM_POR_STATUS[resposta.status] || "Erro desconhecido",
+            resposta.status,
+            json?.dados || null
+        );
+    }
+
+    return json && typeof json === "object" && "dados" in json ? json.dados : json;
+}
+
+export function criarRecurso(rota) {
+  return {
+    listar: (params) => requisicao(rota, { params }),
+    buscar: (id) => requisicao(`${rota}/${id}`),
+    criar: (dados, token) => requisicao(rota, { metodo: "POST", corpo: dados, token }),
+    atualizar: (id, dados, token) => requisicao(`${rota}/${id}`, { metodo: "PUT", corpo: dados, token }),
+    excluir: (id, token) => requisicao(`${rota}/${id}`, { metodo: "DELETE", token }),
+  };
+}
+
+export const porNumero = (lista = []) => lista.sort((a, b) => (a.numero || 0) - (b.numero || 0));

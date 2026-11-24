@@ -8,6 +8,5 @@ function emailsAdmin() {
     .filter(Boolean);
 }
 
-@param {import('@clerk/nextjs/server'.User | null)
 export function usuarioAdmin(usuario) {
     
