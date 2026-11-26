@@ -15,7 +15,7 @@ export class ApiError extends Error {
   constructor(mensagem, status = 0, dados = null) {
     super(mensagem);
     this.name = "ApiError";
-    this.status = status;
+    this.status = status; //0 = sem conexão com API
     this.dados = dados;
   }
 }
@@ -67,11 +67,13 @@ export async function requisicao(
     );
   }
 
+  //aceita tanto envelope padrao quanto resposta "crua"
   return json && typeof json === "object" && "dados" in json
     ? json.dados
     : json;
 }
 
+//crud p recursos q seguem o mesmo padrao de rotas e respostas da API
 export function criarRecurso(rota) {
   return {
     listar: (params) => requisicao(rota, { params }),
@@ -85,5 +87,5 @@ export function criarRecurso(rota) {
   };
 }
 
-export const porNumero = (lista = []) =>
-  lista.sort((a, b) => (a.numero || 0) - (b.numero || 0));
+//ordena lista pelo campo numero (como usado em carreiras, cursos ...)
+export const porNumero = (lista = []) => [...lista].sort((a, b) => (a.numero ?? 0) - (b.numero ?? 0));
