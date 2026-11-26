@@ -22,5 +22,7 @@ export async function listarTodasDicas() {
 }
 
 export const criarDica = (tipo, dados, token) => recursos[tipo].criar(dados, token);
+
 export const atualizarDica = (tipo, id, dados, token) => recursos[tipo].atualizar(id, dados, token);
+
 export const excluirDica = (tipo, id, token) => recursos[tipo].excluir(id, token);
