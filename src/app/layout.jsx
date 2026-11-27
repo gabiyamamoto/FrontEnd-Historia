@@ -1,6 +1,6 @@
 import { Cinzel , DM_Sans } from "next/font/google";
 import { ClerkProvider } from "@clerk/nextjs";
-import { ptBR } from "date-fns/localizations";
+import { ptBR } from "date-fns/locale";
 import { clerkConfigurado } from "@/lib/acesso";
 import "./globals.css";
 
